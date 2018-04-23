@@ -1,6 +1,6 @@
 {
   "name": "gametrial",
-  "description": "This dynamic library management system is for a fictional vdieo game rental company. The website uses Node, Express, Pug, and the SQL ORM Sequelize to interface with a SQLite database containing games, customers, and rentals. Select and update functionality is integrated into the UI.",
+  "description": "This dynamic library management system is for a fictional video game rental company. The website uses Node, Express, Pug, and the SQL ORM Sequelize to interface with a SQLite database containing games, customers, and rentals. Select and update functionality is integrated into the UI.",
   "version": "1.0.0",
   "private": true,
   "scripts": {
