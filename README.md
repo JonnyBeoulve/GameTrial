@@ -5,7 +5,7 @@ This dynamic library management system is for a fictional video game rental comp
 Live Demo:
 https://gametrial.herokuapp.com/
 
-Local:
+Install and run locally:
 1. From terminal, install node dependencies by typing 'npm install'.
 2. Type 'npm start' to initiate the program.
 3. You can interface with the program by visiting 'http://localhost:3000'.
