@@ -1,0 +1,201 @@
+/*=======================================================================
+// General styling.
+=======================================================================*/
+@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
+
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  padding: 4% 8% 0% 8%;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #797e83;
+  font-size: 20px;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: normal;
+}
+
+h2 {
+  border-top: 2px solid #e7e7e7;
+  padding-top: 20px;
+}
+
+a {
+  color: #797e83;
+  text-decoration: none;
+}
+
+  a:hover {
+    color: #0b0b0b;
+    border-bottom: 1px solid rgb(43, 123, 189);
+  }
+
+/*=======================================================================
+// Header styling.
+=======================================================================*/
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  margin-bottom: 100px;
+}
+
+nav img {
+  display: inline-block;
+  vertical-align: middle;
+  height: 80px;
+  margin-right: 20px;
+}
+
+.header-title {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 80px;
+  margin: 0 auto 0 0;
+}
+
+.nav-item {
+  color: #797e83;
+  font-size: 1.125em;
+  padding: .4em;
+  vertical-align: middle;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  padding-left: 7px;
+}
+
+  nav ul li:last-child:after {
+    content: none;
+  }
+
+/*=======================================================================
+// Button styling.
+=======================================================================*/
+a.button, input[type=submit] {
+  color: white;
+  background: rgb(43, 123, 189);
+  padding: 10px 14px 12px;
+  font-size: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+form a.button, input[type=submit] {
+  margin-left: 140px;
+}
+
+input[type=submit] {
+  border: 0;
+}
+
+  a.button:hover, input[type=submit]:hover {
+    background: rgb(24, 94, 151);
+    box-shadow: 0 2px 10px rgb(107, 107, 107);
+  }
+
+/*=======================================================================
+// Table styling;
+=======================================================================*/
+ul {
+  padding: 0;
+  list-style-type: none;
+  margin-bottom: 10px;
+  line-height: 1.3em;
+}
+
+th {
+  color: rgb(43, 123, 189);
+  border-bottom: 2px solid rgb(43, 123, 189);
+  text-align: left;
+  padding: 5px 20px 5px 10px;
+}
+
+tr {
+  min-height: 50px;
+}
+
+tr .button {
+  background-color: rgb(43, 123, 189);
+  padding: 4px 8px 5px;
+  font-weight: normal;
+}
+
+tr .button:hover {
+  background: rgb(24, 94, 151);
+  box-shadow: 0 2px 10px rgb(107, 107, 107);
+}
+
+tr:nth-child(2n) {
+  background: #E7E7E7;
+}
+
+td {
+  padding: 5px 20px 5px 10px;
+}
+
+.home-sub-header {
+  margin-top: 20px;
+  font-weight: bold;
+  min-width: 130px;
+  display: inline-block;
+  font-size: 1.1em;
+  color: rgb(43, 123, 189);
+}
+
+input {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 2px;
+  border-color: #E7E7E7;
+}
+
+input[type=text], select {
+  margin-left: 10px;
+}
+
+/*=======================================================================
+// Footer styling.
+=======================================================================*/
+footer p {
+  display: block;
+  width: 220px;
+  margin: 200px auto 100px;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  nav img {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+  }
+
+  .header-title {
+    margin: 0 auto;
+  }
+
+  .nav-item {
+    font-size: 0.8em;
+  }
+
+  .nav-item-ul {
+    margin: 0 auto;
+  }
+
+  nav {
+    margin-bottom: 40px;
+  }
+}

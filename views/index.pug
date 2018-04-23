@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  p Welcome to the GameTrial database.
+  ul
+    li
+      li(class="home-sub-header") Games
+      ul
+        li
+          a(href='/games/new') New Game
+        li
+          a(href='/games') List All
+        li
+          a(href='/games/overdue_games') List Overdue
+        li
+          a(href='/games/checked_games') List Checked Out
+    li
+      li(class="home-sub-header") Customers
+      ul
+        li
+          a(href='/customers/new') New Customer
+        li
+          a(href='/customers') List All
+    li
+      li(class="home-sub-header") Rentals
+      ul
+        li
+          a(href='/rentals/new') New Rental
+        li
+          a(href='/rentals') List All
+        li
+          a(href='/rentals/overdue_rentals') List Overdue
+        li
+          a(href='/rentals/checked_rentals') List Checked Out

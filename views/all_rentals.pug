@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  h1 #{title}
+  p
+    a.button(href='/rentals/new') Create New Rental
+  p
+    a(href='/rentals')  All 
+    span &#124;
+    a(href='/rentals/overdue_rentals')  Overdue 
+    span &#124;
+    a(href='/rentals/checked_rentals')  Checked Out 
+  table
+    thead
+      tr
+        th Game
+        th Customer
+        th Rented on
+        th Return by
+        th Returned on
+        th Action
+    tbody
+      each rental in rentals
+        tr
+          td
+            a(href=`/games/${rental.Game.id}`) #{rental.Game.title}
+          td
+            a(href=`/customers/${rental.Customer.id}`) #{rental.Customer.first_name} #{rental.Customer.last_name}
+          td #{rental.rented_on}
+          td #{rental.return_by}
+          td #{rental.returned_on}
+          td
+            if(!rental.returned_on)
+                a.button(href=`/games/${rental.Game.id}/return`) Return Game

@@ -1,0 +1,81 @@
+/*=======================================================================
+// Module dependencies.
+=======================================================================*/
+const app = require('../app');
+const http = require('http');
+const models = require('../models').sequelize;
+
+/*=======================================================================
+// Get port from environment and store in Express
+=======================================================================*/
+const port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
+/*=======================================================================
+// Create HTTP server.
+=======================================================================*/
+let server = http.createServer(app);
+
+/*=======================================================================
+// Listen on provided port using all network interfaces.
+=======================================================================*/
+models.sync().then(function() {
+  server.listen(port);
+});
+
+server.on('error', onError);
+server.on('listening', onListening);
+
+/*=======================================================================
+// Normalize a port into a number, st ring, or false.
+=======================================================================*/
+function normalizePort(val) {
+  let port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    return val;
+  }
+
+  if (port >= 0) {
+    return port;
+  }
+
+  return false;
+}
+
+/*=======================================================================
+// Error handler for HTTP server.
+=======================================================================*/
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  let bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/*=======================================================================
+// Event listener for HTTP server.
+=======================================================================*/
+function onListening() {
+  let addr = server.address();
+  let bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  console.log('Application is running at localhost:3000.')
+}

@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1 New Customer
+  form(method='post', action='/customers/new')
+    if errors
+      ul
+        each error in errors
+          li= error.message
+    p
+      label(for='first_name') First Name
+      input#first_name(type='text', name='first_name', value=first_name)
+    p
+      label(for='last_name') Last Name
+      input#last_name(type='text', name='last_name', value=last_name)
+    p
+      label(for='address')  Address
+      input#address(type='text', name='address', value=address)
+    p
+      label(for='email') Email
+      input#email(type='text', name='email', value=email)
+    p
+      label(for='epic_id') Epic ID
+      input#epic_id(type='text', name='epic_id', value=epic_id)
+    p
+      label(for='zip_code') Zip Code
+      input#zip_code(type='text', name='zip_code', value=zip_code)
+    p
+      input(type='submit', value='Create New Customer')

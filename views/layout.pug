@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title Epic Rentals
+    link(rel='stylesheet', href='/static/css/style.css')
+  body
+    div(class="header")
+      nav
+        img(src="/img/GameTrial_Logo.png" alt="GameTrial Logo")
+        h1(class="header-title") GameTrial
+        ul(class="nav-item-ul")
+          li
+            a(class="nav-item" href='/') Home
+          li
+            a(class="nav-item" href='/games') Games
+          li
+            a(class="nav-item" href='/customers') Customers
+          li
+            a(class="nav-item" href='/rentals') Rentals
+    block content
+  footer
+    p Made by Jonathan Leack.

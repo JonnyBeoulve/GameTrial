@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1 #{title}
+  p
+    a.button(href='/games/new') Create New Game
+  p
+    a(href='/games')  All 
+    span &#124;
+    a(href='/games/overdue_games')  Overdue 
+    span &#124;
+    a(href='/games/checked_games')  Checked Out 
+  table
+    thead
+      tr
+        th Title
+        th Developer
+        th Genre
+        th Year Released
+    tbody
+      each game in games
+        tr
+          td
+            a(href=`/games/${game.id}`) #{game.title}
+              td #{game.developer}
+              td #{game.genre}
+              td #{game.first_published}

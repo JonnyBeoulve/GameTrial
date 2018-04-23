@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  h1 Customer: #{customer.first_name} #{customer.last_name}
+  form(method='post' action=`/customers/${customer.id}`)
+    if errors
+      ul
+        each error in errors
+          li= error
+    p
+      label(for='first_name') First Name
+      input#first_name(type='text', name='first_name', value=`${customer.first_name}`)
+    p
+      label(for='last_name') Last Name
+      input#last_name(type='text', name='last_name', value=`${customer.last_name}`)
+    p
+      label(for='address')  Address
+      input#address(type='text', name='address', value=`${customer.address}`)
+    p
+      label(for='email') Email
+      input#email(type='text', name='email', value=`${customer.email}`)
+    p
+      label(for='epic_id') Epic ID
+      input#epic_id(type='text', name='epic_id', value=`${customer.epic_id}`)
+    p
+      label(for='zip_code') Zip Code
+      input#zip_code(type='text', name='zip_code', value=`${customer.zip_code}`)
+    p
+      input(type='submit', value='Update')
+  h2 Rental History
+  table
+    thead
+      tr
+        th Game
+        th Customer
+        th Loaned on
+        th Return by
+        th Returned on
+        th Action
+    tbody
+      each rental in rentals
+        tr
+          td
+            a(href=`/games/${rental.Game.id}`) #{rental.Game.title}
+          td
+            a(href=`/customers/${rental.Customer.id}`) #{rental.Customer.first_name} #{rental.Customer.last_name}
+          td #{rental.rented_on}
+          td #{rental.return_by}
+          td #{rental.returned_on}
+          td
+            if(!rental.returned_on)
+                a.button(href=`/games/${rental.Game.id}/return`) Return Game

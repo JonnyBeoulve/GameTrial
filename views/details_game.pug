@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  h1 Game: #{game.title}
+  form(method='post' action=`/games/${game.id}`)
+    if errors
+      ul
+        each error in errors
+          li= error
+    p
+      label(for='title') Title
+      input#title(type='text', name='title', value=`${game.title}`)
+    p
+      label(for='developer') Developer
+      input#developer(type='text', name='developer',  value=`${game.developer}`)
+    p
+      label(for='genre') Genre
+      input#genre(type='text', name='genre',  value=`${game.genre}`)
+    p
+      label(for='first_published') First Published
+      input#first_published(type='text', name='first_published',  value=`${game.first_published}`)
+    p
+      input(type='submit', value='Update')
+  h2 Rental History
+  table
+    thead
+      tr
+        th Game
+        th Customer
+        th Loaned on
+        th Return by
+        th Returned on
+        th Action
+    tbody
+      each rental in rentals
+        tr
+          td
+            a(href=`/games/${rental.Game.id}`) #{rental.Game.title}
+          td
+            a(href=`/customers/${rental.Customer.id}`) #{rental.Customer.first_name} #{rental.Customer.last_name}
+          td #{rental.rented_on}
+          td #{rental.return_by}
+          td #{rental.returned_on}
+          td
+            if(!rental.returned_on)
+                a.button(href=`/games/${rental.Game.id}/return`) Return Game

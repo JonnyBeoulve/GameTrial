@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1 #{rental.Customer.first_name} #{rental.Customer.last_name}: #{rental.Game.title}
+  if errors
+    ul
+      each error in errors
+        li= error
+  p
+    strong Game Title: &nbsp;
+    | #{rental.Game.title}
+  p
+    strong Rented By: &nbsp;
+    | #{rental.Customer.first_name} #{rental.Customer.last_name}
+  p
+    strong Rented On: &nbsp;
+    | #{rental.rented_on}
+  p
+    strong Return By: &nbsp;
+    | #{rental.return_by}
+  form(method='post' action=`/games/${rental.Game.id}/return`)
+    p
+      label(for='returned_on') Returned On:
+      input#returned_on(type='text', name='returned_on' value=`${todaysDate}`)
+    p
+      input(type='submit', value='Return Game')

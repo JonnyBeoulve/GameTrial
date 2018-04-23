@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1 Customers
+  p
+    a.button(href='/customers/new') Create New Customer
+  table
+    thead
+      tr
+        th Name
+        th Address
+        th Email
+        th Epic ID
+        th Zip
+    tbody
+      each customer in customers
+        tr
+          td
+            a(href=`/customers/${customer.id}`) #{customer.first_name} #{customer.last_name}
+          td #{customer.address}
+          td #{customer.email}
+          td #{customer.epic_id}
+          td #{customer.zip_code}
