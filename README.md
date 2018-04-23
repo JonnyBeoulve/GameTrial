@@ -2,7 +2,7 @@
 This dynamic library management system is for a fictional video game rental company. The website uses Node, Express, Pug, and the SQL ORM Sequelize to interface with a SQLite database containing games, customers, and rentals. Select and update functionality is integrated into the UI.
 
 ## How to Use
-Live demo:
+Demo:
 https://gametrial.herokuapp.com/
 
 Install and run locally:
