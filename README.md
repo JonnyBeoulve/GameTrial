@@ -19,3 +19,6 @@ Install and run locally:
 * SQLite
 * Sequelize
 * Pug
+
+## Programming
+Due to Heroku not supporting SQLite, the demo above has its tables reset every few hours. In the near future I will be converting from SQLite to PostgreSQL to remedy this, in addition to adding new functionality.
