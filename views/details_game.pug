@@ -8,16 +8,20 @@ block content
         each error in errors
           li= error
     p
-      label(for='title') Title
+      div(class="detail-label")
+        label(for='title') Title
       input#title(type='text', name='title', value=`${game.title}`)
     p
-      label(for='developer') Developer
+      div(class="detail-label")
+        label(for='developer') Developer
       input#developer(type='text', name='developer',  value=`${game.developer}`)
     p
-      label(for='genre') Genre
+      div(class="detail-label")
+        label(for='genre') Genre
       input#genre(type='text', name='genre',  value=`${game.genre}`)
     p
-      label(for='first_published') First Published
+      div(class="detail-label")
+        label(for='first_published') First Published
       input#first_published(type='text', name='first_published',  value=`${game.first_published}`)
     p
       input(type='submit', value='Update')

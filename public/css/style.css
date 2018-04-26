@@ -85,13 +85,10 @@ a.button, input[type=submit] {
   color: white;
   background: rgb(43, 123, 189);
   padding: 10px 14px 12px;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 2px;
+  width: 192px;
   cursor: pointer;
-}
-
-form a.button, input[type=submit] {
-  margin-left: 140px;
 }
 
 input[type=submit] {
@@ -165,7 +162,12 @@ input {
 }
 
 input[type=text], select {
-  margin-left: 10px;
+  margin-top: 10px;
+}
+
+input[type=text]:focus {
+  border-color: rgb(43, 123, 189);
+  outline: 0 none;
 }
 
 label {
@@ -181,6 +183,9 @@ footer p {
   margin: 200px auto 100px;
 }
 
+/*=======================================================================
+// Responsive styling.
+=======================================================================*/
 @media (max-width: 768px) {
   nav {
     flex-direction: column;

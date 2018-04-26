@@ -8,20 +8,24 @@ block content
         each error in errors
           li= error.message
     p
-      label(for='game_id') Game
+      div(class="detail-label")
+        label(for='game_id') Game
       select#game_id(name='game_id')
         each game in games
           option(value=`${game.id}`) #{game.title}
     p
-      label(for='customer_id') Customer
+      div(class="detail-label")
+        label(for='customer_id') Customer
       select#customer_id(name='customer_id')
         each customer in customers
           option(value=customer.id) #{customer.first_name} #{customer.last_name}
     p
-      label(for='rented_on') Rented On:
+      div(class="detail-label")
+        label(for='rented_on') Rented On:
       input#rented_on(type='text', name='rented_on', value=todaysDate)
     p
-      label(for='return_by') Return By:
+      div(class="detail-label")
+        label(for='return_by') Return By:
       input#return_by(type='text', name='return_by', value=returnDate)
     p
       input(type='submit', value='Create New Rental')
