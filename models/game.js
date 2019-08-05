@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
 module.exports = (sequelize, DataTypes) => {
-  var Game = sequelize.define('Game', {
+  var Game = sequelize.define("Game", {
     title: {
       type: DataTypes.STRING,
       validate: {
         notEmpty: {
-          msg: 'Error: A title is required.'
+          msg: "Error: A title is required."
         }
       }
     },
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         notEmpty: {
-          msg: 'Error: A developer name is required.'
+          msg: "Error: A developer name is required."
         }
       }
     },
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         notEmpty: {
-          msg: 'Error: A genre is required.'
+          msg: "Error: A genre is required."
         }
       }
     },
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         not: {
           args: /[a-zA-Z!@#$%\^&*()_+=[\]{}:;'".,/\\?`~\-<>]/gim,
-          msg: 'Error: First Published uses YYYY formatting.'
+          msg: "Error: First Published uses YYYY formatting."
         }
       }
     }
@@ -42,4 +42,4 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   return Game;
-}
+};

@@ -4,7 +4,7 @@
 @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 
 * {
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 body {
@@ -31,10 +31,10 @@ a {
   text-decoration: none;
 }
 
-  a:hover {
-    color: #0b0b0b;
-    border-bottom: 1px solid rgb(43, 123, 189);
-  }
+a:hover {
+  color: #0b0b0b;
+  border-bottom: 1px solid rgb(43, 123, 189);
+}
 
 /*=======================================================================
 // Header styling.
@@ -64,7 +64,7 @@ nav img {
 .nav-item {
   color: #797e83;
   font-size: 1.125em;
-  padding: .4em;
+  padding: 0.4em;
   vertical-align: middle;
 }
 
@@ -74,14 +74,15 @@ nav ul li {
   padding-left: 7px;
 }
 
-  nav ul li:last-child:after {
-    content: none;
-  }
+nav ul li:last-child:after {
+  content: none;
+}
 
 /*=======================================================================
 // Button styling.
 =======================================================================*/
-a.button, input[type=submit] {
+a.button,
+input[type="submit"] {
   color: white;
   background: rgb(43, 123, 189);
   padding: 10px 14px 12px;
@@ -91,14 +92,15 @@ a.button, input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit] {
+input[type="submit"] {
   border: 0;
 }
 
-  a.button:hover, input[type=submit]:hover {
-    background: rgb(24, 94, 151);
-    box-shadow: 0 2px 10px rgb(107, 107, 107);
-  }
+a.button:hover,
+input[type="submit"]:hover {
+  background: rgb(24, 94, 151);
+  box-shadow: 0 2px 10px rgb(107, 107, 107);
+}
 
 /*=======================================================================
 // Table styling;
@@ -138,7 +140,7 @@ tr .button:hover {
 }
 
 tr:nth-child(2n) {
-  background: #E7E7E7;
+  background: #e7e7e7;
 }
 
 td {
@@ -158,14 +160,15 @@ input {
   padding: 10px;
   font-size: 14px;
   border-radius: 2px;
-  border-color: #E7E7E7;
+  border-color: #e7e7e7;
 }
 
-input[type=text], select {
+input[type="text"],
+select {
   margin-top: 10px;
 }
 
-input[type=text]:focus {
+input[type="text"]:focus {
   border-color: rgb(43, 123, 189);
   outline: 0 none;
 }

@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
 module.exports = (sequelize, DataTypes) => {
-  var Customer = sequelize.define('Customer', {
+  var Customer = sequelize.define("Customer", {
     first_name: {
       type: DataTypes.STRING,
       validate: {
         notEmpty: {
-          msg: 'Error: A First Name is required.'
+          msg: "Error: A First Name is required."
         }
       }
     },
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         notEmpty: {
-          msg: 'Error: A Last Name is required.'
+          msg: "Error: A Last Name is required."
         }
       }
     },
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         notEmpty: {
-          msg: 'Error: An Address is required.'
+          msg: "Error: An Address is required."
         }
       }
     },
@@ -30,11 +30,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         notEmpty: {
-          msg: 'Error: An Email is required!'
+          msg: "Error: An Email is required!"
         },
         isEmail: {
           args: true,
-          msg: 'Error: The Email must be valid!'
+          msg: "Error: The Email must be valid!"
         }
       }
     },
@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         notEmpty: {
-          msg: 'Error: An Epic ID is required.'
+          msg: "Error: An Epic ID is required."
         }
       }
     },
@@ -50,17 +50,17 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       validate: {
         notEmpty: {
-          msg: 'Error: A Zip Code is required.'
+          msg: "Error: A Zip Code is required."
         },
         not: {
           args: /[a-zA-Z!@#$%\^&*()_+=[\]{}:;'".,/\\?`~\-<>]/gim,
-          msg: 'Error: The Zip Code may only contain numbers.'
+          msg: "Error: The Zip Code may only contain numbers."
         }
       }
     }
   });
 
- Customer.associate = function(models) {
+  Customer.associate = function(models) {
     Customer.hasMany(models.Rental, { foreignKey: "customer_id" });
   };
 

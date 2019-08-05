@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
 module.exports = (sequelize, DataTypes) => {
-  var Rental = sequelize.define('Rental', {
+  var Rental = sequelize.define("Rental", {
     game_id: {
       type: DataTypes.INTEGER,
       validate: {
         notEmpty: {
-          msg: 'Error: A game ID is required.'
+          msg: "Error: A game ID is required."
         }
       }
     },
@@ -14,11 +14,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       validate: {
         notEmpty: {
-          msg: 'Error: A customer ID is required.'
+          msg: "Error: A customer ID is required."
         },
         not: {
           args: /[a-zA-Z!@#$%\^&*()_+=[\]{}:;'".,/\\?`~\-<>]/gim,
-          msg: 'Error: The customer ID may only contain numbers.'
+          msg: "Error: The customer ID may only contain numbers."
         }
       }
     },
@@ -26,10 +26,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATEONLY,
       validate: {
         notEmpty: {
-          msg: 'Error: Rented on is required.'
+          msg: "Error: Rented on is required."
         },
         isDate: {
-          msg: 'Error: Rented on must be a valid date.'
+          msg: "Error: Rented on must be a valid date."
         }
       }
     },
@@ -37,14 +37,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATEONLY,
       validate: {
         notEmpty: {
-          msg: 'Error: Return by is required.'
+          msg: "Error: Return by is required."
         },
         isDate: {
-          msg: 'Error: Return by must be a date.'
+          msg: "Error: Return by must be a date."
         },
         isAfter: {
-          args: Date('now'),
-          msg: 'Error: Return by must be a valid date.'
+          args: Date("now"),
+          msg: "Error: Return by must be a valid date."
         }
       }
     },
@@ -52,11 +52,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATEONLY,
       validate: {
         isDate: {
-          msg: 'Error: Returned on must be a valid date.'
+          msg: "Error: Returned on must be a valid date."
         }
       }
     }
-  })
+  });
 
   Rental.associate = function(models) {
     Rental.belongsTo(models.Game, { foreignKey: "game_id" });
